@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     var livesCount = livesInput.val()
 
     livesInput.on('keyup', livesInputHandler)
+    livesInput.on('blur', livesInputBlurHandler)
     clueless.on('click', gunFireHandler)
     reset.on('click', resetHandler)
     dedge.on('click', resetHandler)
@@ -62,6 +63,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
             livesInput.val(10) 
         }
     
+        if(livesInput.val() < 0) {
+            livesInput.val(1)
+        }
+
+        livesCount = livesInput.val()
+        maxLives.text(livesInput.val())
+
+        if(!livesInput.val() || !livesInput.val().length) {
+            maxLives.text(0)
+        }
+    }
+
+    function livesInputBlurHandler() {
         if(livesInput.val() < 1) {
             livesInput.val(1)
         }
