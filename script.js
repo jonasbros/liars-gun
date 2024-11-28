@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }, 2300)
 
         function isDead() {
-            console.log(livesCount)
             if (livesCount > 1) {          
               // Simulate the chamber (1 in 6 chance of firing)
               const bulletChamber = Math.floor(Math.random() * livesCount) // Random number 0-5
@@ -66,7 +65,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         if(livesInput.val() < 1) {
             livesInput.val(1)
         }
-    
+
+        livesCount = livesInput.val()
         maxLives.text(livesInput.val())
     }
     
