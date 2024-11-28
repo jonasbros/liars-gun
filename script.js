@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 clueless.removeClass('hidden')
                 tooltip.removeClass('hidden')
             }
-        }, 2300)
+        }, 3000)
 
         function isDead() {
             if (livesCount > 1) {          
